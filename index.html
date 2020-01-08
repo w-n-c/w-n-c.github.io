@@ -1,117 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Bootcamp to Grad Student</title>
-	<!-- webcomponent polyfill: -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
-	
-	<!-- KaTeX -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
-	<!-- higlightjs -->
-	<link rel="stylesheet" href="highlight/styles/github-gist.css">
-	<script src="highlight/highlight.pack.js"></script>
-	<!--consider moving highlight to webworker for async: <https://highlightjs.org/usage/-->
-	<script>hljs.initHighlightingOnLoad()</script>
-	
-</head>
-<body>
-	<main>
-	<h1> Testing all the things </h1>
-	<article>
-		<!-- highlight.js test -->
-		<pre>
-		<code class="language-c">
-			#include <stdio.h>
-			
-			int main() {
-				printf("Hello World");
-				return 0;
-			}
-		</code>
-		</pre>
-		<!-- reminder to make custom prompt -->
-		<samp><span class="prompt">#></span>clang hello_world.c && ./a.out</samp>
-	</article>
-	<article id="maths">
-
-	</article>
-	<script>
-		katex.render("\\displaystyle= \\frac{n(n+1)}{2}", document.getElementById("maths"))
-	</script>
-	<script>
-		// code courtesy of https://www.youtube.com/watch?v=Tus_GVxyOtU
-		class ProgressBar extends HTMLElement {
-			constructor() {
-				super()
-				this.shadow = this.attachShadow({mode: 'open'})
-				this._complete = 0
-			}
-
-			get complete() {
-				return this._complete
-			}
-			set complete(val) {
-				this.setAttribute('complete', val)
-			}
-			static get observedAttributes() {
-				return [ 'complete' ]
-			}
-
-			attributeChangedCallback(name, oldVal, newVal) {
-				switch(name) {
-						case'complete':
-							const innerBar = this.shadow.querySelector('.inner-bar')
-							this._complete = parseInt(newVal, 10) || this._complete;
-							innerBar.style.width = this.complete + '%'
-							innerBar.innerHTML = this.complete + '%'
-				}
-			}
-
-			connectedCallback() {
-				let template = `
-					<style>
-						.progress-bar {
-							width: 50%;
-							height: 30px;
-							background-color: #edf2f4;
-							border-radius: 5px;
-							color: #fff;
-						}
-						.inner-bar {
-							height: 100%;
-							line-height: 30px;
-							background: #2b2d42;
-							text-align: center;
-							border-radius: 5px;
-							transition: width 0.25s;
-						}
-
-					</style>
-					<div class="progress-bar">
-						<div class="inner-bar">${this.complete}%</div>
-					</div>
-				`
-				this.shadow.innerHTML = template;
-			}
-		}
-		window.customElements.define('progress-bar', ProgressBar)
-	</script>
-	<progress-bar></progress-bar>
-	<script>
-		const progress = document.querySelector('progress-bar')
-		let complete = 0;
-		const pInterval = setInterval(() => { 
-			complete += 1
-			if (complete <= 100) {
-				progress.setAttribute('complete', complete)
-			} else {
-				clearInterval(pInterval)
-			}
-		}, 100)
-	</script>
-	</main>
-	<footer>Powered by GitHub Pages, KaTex, Highlight.js, and electricity</footer>
-</body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>stay awhile and listen</title>
+		<link href="index.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/math">Math</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<article class="bio">
+				<h1>Will Newell</h1>
+				<section class="blurb">
+					I studied aerospace engineering
+					and all my favorite classes involved programming
+					I reflected at a spritual retreat in Costa Rica
+					and read <em title="written by Steven Levy">Hackers: Heroes of the Computer Revolution</em>
+					I move to New York to work in film, and did,
+					but then I joined a coding bootcamp.
+					Something something story tied up (well I'm not a writer)
+					I like code.
+				<section>
+			</article>
+		</main>
+		<footer>Powered by GitHub Pages (and electricity)</footer>
+	</body>
 </html>
