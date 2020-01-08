@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>stay awhile and listen</title>
+		<link href="index.css" rel="stylesheet">
+
+		<!-- KaTeX -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/math">Math</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<article class="course-work">
+				<h2>A textbook</h2>
+				<article class="chapter">
+					<h3>Chapter 1</h3>
+					<section>
+						<h4>1.1</h4>
+						<p id="aTextbook-1.1">
+						<script>
+							katex.render("\\displaystyle = \\frac{n(n+1)}{2}", document.getElementById("aTextbook-1.1"))
+						</script>
+					</section>
+				</article>
+			</article>
+		</main>
+		<footer>Powered by GitHub Pages and KaTeX (and electricity)</footer>
+	</body>
+</html>
