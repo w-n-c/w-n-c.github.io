@@ -1,3 +1,32 @@
-pre, .language-c, code {
+html {
+	font-family: 'Ibarra Real Nova', serif;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
 	padding: 0;
 }
+
+h1 {
+	font-family: 'Zilla Slab Highlight', cursive;
+	font-size: 56px;
+	margin: 20px;
+}
+
+pre {
+	font-family: 'Josefin Slab', serif;
+	font-weight: 500;
+	font-size: 24px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	margin: 0 40px 0 20px;
+}
+
