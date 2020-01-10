@@ -1,3 +1,4 @@
+/* global styling */
 html {
 	font-family: 'Ibarra Real Nova', serif;
 }
@@ -14,12 +15,26 @@ h1 {
 	margin: 20px;
 }
 
-pre {
-	font-family: 'Josefin Slab', serif;
-	font-weight: 500;
-	font-size: 24px;
+/* global footer/layout styling */
+/* (styling for a floating footer */
+body {
+	display: flex;
+	flex-direction: column;
 }
 
+body > *:not(:last-child) {
+	flex: 1 0 auto;
+}
+
+body > *:last-child {
+	flex-shrink: 0;
+}
+
+footer {
+	margin-top: 40px;
+}
+
+/* global navbar styling */
 nav ul {
 	list-style-type: none;
 	padding: 0;
@@ -30,3 +45,47 @@ nav ul li {
 	margin: 0 40px 0 20px;
 }
 
+/* home aka root aka '/' styling */
+.blurb pre {
+	font-family: 'Josefin Slab', serif;
+	font-weight: 500;
+	font-size: 24px;
+}
+
+/* '/projects' styling */
+
+/* container for all projects */
+#project-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* wrapper container for each project */
+.project-view {
+	height: 500px;
+	width: 720px;
+	padding: 0;
+	overflow: hidden;
+	border: 2px solid darkgrey;
+	box-sizing: border-box;
+}
+
+/* style configurations for each iframe */
+#freelancersCalendar {
+	height: 100%;
+	width: 100%;
+}
+
+#soccerSite {
+	height: 800px;
+	width: 1100px;
+	transform: scale(.65);
+	transform-origin: 0 0;
+}
+
+/* a gist (so embedded script)- applies to wrapper div */
+#nand2tetris {
+	overflow: scroll;
+	height: 100%;
+}
