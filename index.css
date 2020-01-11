@@ -22,7 +22,7 @@ body {
 	flex-direction: column;
 }
 
-body > *:not(:last-child) {
+body main {
 	flex: 1 0 auto;
 }
 
@@ -34,7 +34,13 @@ footer {
 	margin-top: 40px;
 }
 
-/* global navbar styling */
+/* global header styling */
+
+header {
+	display: flex;
+	align-items: center;
+}
+
 nav ul {
 	list-style-type: none;
 	padding: 0;
@@ -42,14 +48,27 @@ nav ul {
 }
 
 nav ul li {
+	font-size: 20px;
 	margin: 0 40px 0 20px;
 }
 
 /* home aka root aka '/' styling */
+.blurb {
+	display: flex;
+	flex-direction: column;
+	margin: 40px;
+}
+
 .blurb pre {
 	font-family: 'Josefin Slab', serif;
 	font-weight: 500;
 	font-size: 24px;
+	margin: 20px 0;
+}
+
+.blurb h2 {
+	order: 1;
+	margin: 10px 0;
 }
 
 /* '/projects' styling */
