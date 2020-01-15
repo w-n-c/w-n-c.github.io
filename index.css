@@ -95,3 +95,27 @@ nav ul li {
 	overflow: scroll;
 	height: 100%;
 }
+
+/* '/bio' styling */
+
+#bio {
+	margin-left: 4rem;
+}
+
+.interests ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.education section {
+	margin: 0 1rem 2.5rem 0;
+}
+
+.education h3 {
+	margin: 0;
+}
+
+.education p {
+	margin: 0 1rem;
+}
+
