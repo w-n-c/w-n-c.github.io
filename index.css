@@ -11,27 +11,27 @@ html, body {
 
 h1 {
 	font-family: 'Zilla Slab Highlight', cursive;
-	font-size: 56px;
-	margin: 20px;
+	font-size: 3.5rem;
+	margin: 1rem;
 }
 
-/* global footer/layout styling */
-/* (styling for a floating footer */
+/* global layout styling */
 body {
 	display: flex;
-	flex-direction: column;
+	flex-flow: column;
 }
 
 body main {
+	display: flex;
+	flex-direction: column;
+	max-width: 720px;
+	margin: 0 auto;
 	flex: 1 0 auto;
 }
 
-body > *:last-child {
-	flex-shrink: 0;
-}
-
 footer {
-	margin-top: 40px;
+	flex: 0 0;
+	margin-top: 2.5rem;
 }
 
 /* global header styling */
@@ -48,38 +48,24 @@ nav ul {
 }
 
 nav ul li {
-	font-size: 20px;
-	margin: 0 40px 0 20px;
+	font-size: 1.25rem;
+	margin: 0 2.5rem 0 1.25rem;
 }
 
-/* home aka root aka '/' styling */
+/* home '/' styling */
+
 .blurb {
-	display: flex;
-	flex-direction: column;
-	margin: 40px;
-}
-
-.blurb pre {
 	font-family: 'Josefin Slab', serif;
 	font-weight: 500;
-	font-size: 24px;
-	margin: 20px 0;
+	font-size: 1.5rem;
+	margin-left: 2.5rem;
 }
 
-.blurb h2 {
-	order: 1;
-	margin: 10px 0;
+#home-page {
+	margin: 0;
 }
 
 /* '/projects' styling */
-
-/* container for all projects */
-#project-page {
-	display: flex;
-	flex-direction: column;
-	max-width: 720px;
-	margin: 0 auto;
-}
 
 /* wrapper container for each project */
 .project-view {
