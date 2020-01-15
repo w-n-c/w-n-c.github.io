@@ -96,6 +96,41 @@
 			<article class="project">
 				<h2>Nand2Tetris</h2>
 				<section class="project-description">
+					<h3>Taking the term 'full-stack' too far</h3>
+					<p>This is probably my favorite project right now. The idea is to
+					build a <em>heavily</em> simplified computer, write a language for it,
+					then an operating system, and eventually a user app (tetris).
+					<ol>
+						<li>
+							<h4>Use HDL to specify hardware components for a computer</h4>
+							In other words, start with just NAND gates and build up the logic
+							for a simple computer with a register based	cpu and ram.
+						</li>
+						<li>
+							<h4>Write a linker for a simple assembly language targeting the
+								aforemention hardware</h4>
+							A description of the assembly language is given as a start point.
+							My code for the linker was written in Java, and is shown in a
+							gist embedded below.
+						</li>
+						<li>
+							<h4>Write a VM translator for a given IR to our assembly language</h4>
+							The system language compiles to a VM. The first step is to map the
+							VM language to the hardware's assembly language.
+						</li>
+						<li>
+							<h4>Write a compiler for a object-based language to the VM</h4>
+							The language has basic typing and classes but no inheritance.
+							A small standard library, including screen utilities is also
+							written.
+						</li>
+						<li>
+							<h4>Write an Operating System in the new language</h4>
+							This includes a runtime, as well as software abstractions for
+							hardware (screen, keyboard) and better memory allocation utilities.
+						</li>
+					</ol>
+					</p>
 				</section>
 				<section class="project-view">
 					<div id="nand2tetris">
