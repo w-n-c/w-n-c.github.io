@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
 
-let content: string[]= [];
+let contentContainer: string[]= [];
 
-export default writable(content);
+export const footnoteContent = writable(contentContainer)

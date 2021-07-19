@@ -1,22 +1,38 @@
 <!--
 Assertions:
   - Footnote order is fixed
-  - Foontes are not dynamically added/removed
-    - exception: new footnotes may be added to the tail
+  - Footnotes are not dynamically added/removed (except by adding to the tail)
 -->
-<script context="module" lang="ts">
+<script lang="ts" context="module">
+  import { footnoteContent } from './footnoteContent.ts'
+
   let total: number = 0
 </script>
+
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
 
+  export let content: string
   let index: number
+  let path: string
 
-  onMount(() -> {
+  onMount(() => {
     index = total
+    footnoteContent.update(otherFootnotes => [...otherFootnotes, content])
     total++
+    path = window.location.origin + window.location.pathname
   })
 
+  onDestroy(() => {
+    footnoteContent.update(allFootnotes => {
+      total = 0
+      return []
+    })
+  })
 </script>
 
-<a id="footnote-ref-{index}" title="link to footnote" href="footnote-{index}">{index + 1}</a>
+<sup>
+  <a id="footnote-ref-{index}" title="link to footnote" href="{path}#footnote-{index}">
+    {index + 1}
+  </a>
+</sup>
