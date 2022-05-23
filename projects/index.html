@@ -16,18 +16,62 @@
 				<ul>
 					<li><a href="/">Home</a></li>
 					<li><a href="/projects">Projects</a></li>
-					<li><a href="/math">Math</a></li>
 					<li><a href="/bio">Bio</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main id="project-page">
+      <article class="project">
+				<h2>Board Game Hunter</h2>
+				<section class="project-description">
+					<h3>Make hunting down your favourite out of print board game (less) painful</h3>
+					<p>This is my current project. The project has a sometimes-used project page
+            on github <a href="https://github.com/users/w-n-c/projects/1/views/4">here.</a>
+					  Its written in Clojure/Clojurescript using the Luminus Framework. You can learn
+            about the framework via the accompanying book "Web Development with Clojure", found
+            <a href="https://pragprog.com/titles/dswdcloj3/web-development-with-clojure-third-edition/">
+              here.
+            </a>
+				</section>
+				<section class="project-status">
+					<h3>Current Status</h3>
+					<p>The search is functional for bgg's 'classic' market listings. Auctions are WIP
+            and, although I love it, BGG has once again made my life difficult by adding a
+            new market-to-replace-all-markets. So guess I'll be working on that as well.
+          </p>
+				</section>
+				<section class="project-goals">
+					<h3>Goals</h3>
+					<ol>
+						<li>
+							<h4>Search all of bgg in one location</h4>
+							<p>We were almost there until BGG added a new market. Further investigation is needed
+              to see what is required from an api-access standpoint.</p>
+						</li>
+						<li>
+							<h4>Aggregate search with notifications</h4>
+							<p>One off searches are nice, but the ability to save a collection</p>
+						</li>
+						<li>
+							<h4>Integration with other calendars (iCal/gCal)</h4>
+							<p>Event importing/exporting is a given, but I'd like the ability to
+							keep the calendars in sync. Research into API's and license agreements
+							is necessary before moving forward.</p>
+						</li>
+					</ol>
+				</section>
+				<section class="project-view">
+					<iframe id="freelancersCalendar"
+									title="Calendar App"
+									src="https://w-n-c.dev/">
+					</iframe>
+				</section>
+			</article>
 			<article class="project">
 				<h2>Freelancer's Calendar</h2>
 				<section class="project-description">
 					<h3>The Google Calendar replacement you didn't know you needed (still w.i.p.)</h3>
-					<p>This is my current project. I don't have the project page written yet so
-					I have put the status and goals here. Its written in React, and uses
+					<p>This was my main pre-full-time project. Its written in React, and uses
 					a Node.js backend connected to a MongoDB instance. There are no class
 					components, and a lot of hooks. Code viewable
 					<a href="https://github.com/w-n-c/freelancers-calendar">here</a>, the live
@@ -99,7 +143,7 @@
 					<h3>Taking the term 'full-stack' too far</h3>
 					<p>This is probably my favorite project right now. The idea is to
 					build a <em>heavily</em> simplified computer, write a language for it,
-					then an operating system, and eventually a user app (tetris).
+          then an operating system, and eventually a user app (tetris).</p>
 					<ol>
 						<li>
 							<h4>Use HDL to specify hardware components for a computer</h4>
@@ -130,7 +174,6 @@
 							hardware (screen, keyboard) and better memory allocation utilities.
 						</li>
 					</ol>
-					</p>
 				</section>
 				<section class="project-view">
 					<div id="nand2tetris">
